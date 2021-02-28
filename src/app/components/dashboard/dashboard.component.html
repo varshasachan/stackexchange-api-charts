@@ -31,8 +31,8 @@
   <div class="loader" *ngIf="loading">
   <clr-spinner [clrMedium]="true"></clr-spinner>
   </div>
-  <div>
-    <canvas baseChart style="width: inherit;height: inherit;" [datasets]="barChartData" [labels]="barChartLabels"
+  <div *ngIf="!loading">
+    <canvas baseChart style="width: 400px;height: 400px;" [datasets]="barChartData" [labels]="barChartLabels"
       [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
     </canvas>
   </div>
