@@ -1,0 +1,38 @@
+<div class="clr-row" style="padding-left: 2rem;">
+    <div class="clr-col-auto">
+      <clr-date-container>
+        <label>From Date</label>
+        <input type="date" clrDate name="from_date" [(clrDate)]="FROM_DATE" class="date-style" />
+      </clr-date-container>
+    </div>
+    <div class="clr-col-auto">
+      <clr-date-container>
+        <label>To Date</label>
+        <input type="date" clrDate name="to_date" [(clrDate)]="TO_DATE" class="date-style" />
+      </clr-date-container>
+    </div>
+    <div class="clr-col-auto">
+      <clr-input-container>
+        <label>Page Number</label>
+        <input clrInput placeholder="Enter Page Number" name="name" [(ngModel)]="PageNumber" />
+      </clr-input-container>
+    </div>
+    <div class="clr-col-auto">
+      <clr-input-container>
+        <label>Page Size</label>
+        <input clrInput placeholder="Enter Page Size" name="name" [(ngModel)]="PageSize" />
+      </clr-input-container>
+    </div>
+    <div class="clr-col-auto" style="padding-left: 4rem; margin-top: 1rem;">
+      <button class="btn btn-primary" (click)="submitDetails()"> Submit</button>
+    </div>
+  </div>
+  <br><br>
+  <div class="loader" *ngIf="loading">
+  <clr-spinner [clrMedium]="true"></clr-spinner>
+  </div>
+  <div>
+    <canvas baseChart style="width: inherit;height: inherit;" [datasets]="barChartData" [labels]="barChartLabels"
+      [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+    </canvas>
+  </div>
